@@ -12,6 +12,8 @@ class Game: # pylint: disable=too-few-public-methods
 
     def is_valid(self, word: str) -> bool:
         """Return True if and only if the word is valid, given the Game's grid and it's a valid English word"""
+        if not word:
+            return False
 
         # Check word against le Wagons dictionary API
         url = f"https://wagon-dictionary.herokuapp.com/{word}"

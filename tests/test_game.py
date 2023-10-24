@@ -15,6 +15,12 @@ class TestGame:
         for letter in grid:
             assert letter in string.ascii_uppercase
 
+    def test_empty_word_is_invalid(self):
+        # setup
+        new_game = Game()
+        # verify
+        assert new_game.is_valid('') is False
+
     def test_is_valid(self):
         random.seed(42)
         new_game = Game() # initiates grid to ['U', 'D', 'A', 'X', 'I', 'H', 'H', 'E', 'X']
