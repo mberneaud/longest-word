@@ -24,3 +24,9 @@ class TestGame:
         random.seed(42)
         new_game = Game() # initiates grid to ['U', 'D', 'A', 'X', 'I', 'H', 'H', 'E', 'X']
         assert new_game.is_valid("DAISY") == False
+
+    def test_unknown_word_is_invalid(self):
+        """A word that is not in the english directory should no be valid"""
+        new_game = Game()
+        new_game.grid = list('KWIENFUQW') # Force the grid to a test case:
+        assert new_game.is_valid('FEUN') is False
